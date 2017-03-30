@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
     # render text: sentences
     return sentences
   end
+  
   def cbc_article(url)
     base_url = url
 
