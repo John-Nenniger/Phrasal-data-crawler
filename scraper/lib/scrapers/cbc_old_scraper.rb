@@ -4,6 +4,14 @@ require 'Json'
 require 'Pry'
 require 'csv'
 
+module CBCScraper
+  def content(url)
+    
+  end
+end
+
+
+
 
 # Islamaphobia Article
 page = HTTParty.get('http://www.cbc.ca/news/politics/m-103-islamophobia-motion-vote-1.4038016');
