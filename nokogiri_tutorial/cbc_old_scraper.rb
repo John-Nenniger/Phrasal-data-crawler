@@ -22,8 +22,6 @@ date = Date.parse(parse_page.css('.delimited').text)
 
 
 
-
-
 # This gives the article without most of the garbage as one large string
 # # Next up I need to split the paragraph into sentences,
 # puts sentences
