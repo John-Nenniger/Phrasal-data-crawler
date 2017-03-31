@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
     base_url = "http://www.cbc.ca/rss/"
     page  = agent.get(base_url)
     # click on one of the rss feeds (which goes to an xml file)
-    agent.page.link_with(:text => 'Top Stories').click
+    agent.page.link_with(:text => 'Aboriginal').click
     # get and parse dat xml
     xml = Nokogiri::XML(agent.page().body);
     # create the array you want
