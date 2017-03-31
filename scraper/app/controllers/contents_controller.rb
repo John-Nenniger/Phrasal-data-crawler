@@ -1,6 +1,7 @@
 class ContentsController < ApplicationController
   def create
-    urls = get_urls_from_rss
+    titles = ["Top Stories", "World", "Canada", "Politics", "Business", "Health", "Arts & Entertainment", "Technology & Science", "Offbeat", "Aboriginal", "British Columbia"]
+    urls = get_urls_from_rss(titles)
     urls.each do |u|
       params = cbc_content(u)
       sentences = params[0]
