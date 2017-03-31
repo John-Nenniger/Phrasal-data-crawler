@@ -1,13 +1,24 @@
 class ArticlesController < ApplicationController
 
   def create
-    url = "http://www.cbc.ca/news/politics/m-103-islamophobia-motion-vote-1.4038016"
-    arr = cbc_article(url);
-    title = arr[0];
-    date = arr[1];
-    a = Article.new(url: url, title: title, date: date)
-    a.save!
-    render plain: [title, date]
+    urls = get_urls_from_rss
+    # url = "http://www.cbc.ca/news/politics/m-103-islamophobia-motion-vote-1.4038016"
+    urls.each do |u|
+      arr = cbc_article(u);
+      title = arr[0];
+      if arr[1].class != Date
+        date = Date.new(2000,1,1)
+      else
+        date = arr[1];
+      end
+      a = Article.new(url: u, title: title, date: date)
+      if a.save
+        puts '👾👾👾👾👾👾👾'
+      else
+        puts '🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀🌀'
+      end
+    end
+    render plain: urls
   end
 
 end

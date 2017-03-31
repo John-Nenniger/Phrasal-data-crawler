@@ -53,7 +53,7 @@ require 'mechanize'
 
 # amazing! this finally works ^ ✔️
 
-
+# this method needs to be altered to be more robust and to also iterate over all of the categories.
 def get_urls_from_rss
   # make a robot
   agent = Mechanize.new
@@ -86,8 +86,14 @@ def get_urls_from_rss
   return top_stories_urls
 end
 
-
-
+# def scrape_with_urls
+#   urls = get_urls_from_rss
+#   urls.each do |u|
+#     cbc_content(u)
+#   end
+# end
+#
+# scrape_with_urls
 
 
 
