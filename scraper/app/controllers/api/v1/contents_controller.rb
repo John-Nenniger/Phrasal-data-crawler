@@ -1,14 +1,9 @@
 class Api::V1::ContentsController < ApplicationController
 
-  
-
   def compare
-    highlighted = "This is a test"
-    @sentences = Content.sentence.order(created_at: :desc)
-    @sentences.each do |sentence|
-      if sentence == highlighted
-        Content.find
-    end
+    highlighted = "He says 3D printers today are where "
+    matches = Content.where("sentence ILIKE ?", "%#{highlighted}%")
+    render json: matches
   end
 
 end
