@@ -7,6 +7,8 @@ class Api::V1::ContentsController < ApplicationController
     puts highlighted
     puts "$$$$$$$$$$$$$$$$$$$$"
     matches = Content.where("sentence ILIKE ?", "%#{highlighted}%")
+    puts matches
+    puts "((((((((((((((((((((((((()))))))))))))))))))))))))"
     render json: matches
   end
 
