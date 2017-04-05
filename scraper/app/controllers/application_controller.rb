@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  protect_from_forgery :except => [:compare]
   base_url = "http://www.cbc.ca/news/politics/m-103-islamophobia-motion-vote-1.4038016"
   base_url2 = "http://www.cbc.ca/news/business/bank-s-deceptive-titles-put-investments-at-risk-1.4044702"
 

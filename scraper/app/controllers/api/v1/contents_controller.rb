@@ -1,7 +1,11 @@
 class Api::V1::ContentsController < ApplicationController
 
   def compare
-    highlighted = "He says 3D printers today are where "
+    puts "$$$$$$$$$$$$$$$$$$$$"
+    phrase_params = params.require(:highlighted).permit(:phrase, :content)
+    highlighted = phrase_params.to_h[:phrase]
+    puts highlighted
+    puts "$$$$$$$$$$$$$$$$$$$$"
     matches = Content.where("sentence ILIKE ?", "%#{highlighted}%")
     render json: matches
   end

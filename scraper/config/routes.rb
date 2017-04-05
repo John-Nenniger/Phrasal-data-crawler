@@ -8,7 +8,7 @@ Rails.application.routes.draw do
  namespace :api, defaults: {format: :json} do
    namespace :v1 do
     #  resources :contents, only: [:create]
-    get 'contents', to: 'contents#compare'
+    post 'contents', to: 'contents#compare'
    end
  end
 
