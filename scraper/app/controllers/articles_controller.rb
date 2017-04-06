@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
 
   def create
-    titles = ["Top Stories", "World", "Canada", "Politics", "Business", "Health", "Arts & Entertainment", "Technology & Science", "Offbeat", "Aboriginal", "British Columbia"]
+    titles = ["Top Stories", "World", "Canada", "Politics", "Business", "Health", "Arts & Entertainment",
+      "Technology & Science", "Offbeat", "Aboriginal", "British Columbia", "Kamloops"]
+      # "Calgary", "Edmonton", "Saskatchewan", "Saskatoon", "Manitoba", "Thunder Bay", "Sudbury", "Windsor"]
     urls = get_urls_from_rss(titles)
     # url = "http://www.cbc.ca/news/politics/m-103-islamophobia-motion-vote-1.4038016"
     urls.each do |u|
