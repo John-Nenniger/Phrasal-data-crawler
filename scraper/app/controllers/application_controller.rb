@@ -15,7 +15,10 @@ class ApplicationController < ActionController::Base
     # This gives the article without most of the garbage as one large string
     article = parse_page.css('.story-content').children.text.tr('^A-Za-z0-9.,\' -', ' ')
     # Next up I need to split the paragraph into sentences,
-    sentences = article.split(/(?<=\.) {2,}(?=[A-Z])/);
+    # sentences = article.split(/(?<=\.) {2,}(?=[A-Z])/);
+  # from stack overflow
+    sentences = article.split(/(?<=[.?!;])\s+(?=\p{Lu})/);
+    # sentences = article.split(/\. /);
     # render text: sentences
     return [sentences, title]
   end
