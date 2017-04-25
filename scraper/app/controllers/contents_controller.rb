@@ -50,6 +50,6 @@ class ContentsController < ApplicationController
      render plain: "no errors, gj"
   end
   def show
-    render plain: 'This is just a backend, accessing this site won\'t be very useful to you.'
+    render plain: "This is just a backend, accessing this site won\'t be very useful to you."
   end
 end

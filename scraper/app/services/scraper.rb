@@ -15,7 +15,7 @@ require 'Nokogiri'
   parse_page = Nokogiri::HTML(page);
 
   title = parse_page.css('.story-title').text
-  if title = ""
+  if title == ""
     title = parse_page.css('.segment-headline').text
   end
   Pry.start(binding)
